@@ -5,7 +5,7 @@ import TagsList from './TagsList';
 describe('the tags list', () => {
   it('renders as expected', () => {
     const tree = renderer
-      .create(<TagsList tags={['css', 'html', 'go']} />)
+      .create(<TagsList tags={['css', 'html', 'swift']} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
