@@ -18,3 +18,7 @@ describe('The question list', () => {
     expect(2+2).toEqual(4);
   });
 });
+
+// it.only runs only that test
+// it.skip skips that test
+// multiple it.only's cancel out
