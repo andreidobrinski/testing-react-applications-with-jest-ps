@@ -1,4 +1,6 @@
-import { mapStateToProps } from '../QuestionDetail';
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { mapStateToProps, QuestionDetailDisplay } from '../QuestionDetail';
 
 describe('The Question Detail Component', () => {
   describe('The container element', () => {
@@ -19,7 +21,18 @@ describe('The Question Detail Component', () => {
       });
     });
   });
-  it('should not regress', () => {
-    
+  describe('the display element', () => {
+    it('should not regress', () => {
+      const tree = renderer.create(
+        <QuestionDetailDisplay
+          title="the answer"
+          body="42"
+          answer_count={0}
+          tags={['hitchhiking']}
+        />
+      );
+
+      expect(tree.toJSON()).toMatchSnapshot();
+    });
   });
 });
